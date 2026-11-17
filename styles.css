@@ -171,3 +171,5 @@ footer a:hover { color: #fff; text-decoration: underline; }
 .compara td.si { color: var(--verde); font-weight: 800; }
 .compara tbody tr:last-child th, .compara tbody tr:last-child td { border-bottom: 0; }
 .nota-planes { margin: 24px 0 0; color: var(--texto-suave); font-size: 15px; text-align: center; }
+
+[hidden] { display: none !important; }
