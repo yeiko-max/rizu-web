@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rizú — Peluquería, uñas y belleza a domicilio</title>
+<meta name="description" content="Rizú es la app para reservar peluquería, manicura, barbería, maquillaje y estética a domicilio con profesionales verificados. Valoraciones de doble sentido, pago con tarjeta o en efectivo.">
+<meta name="keywords" content="peluquería a domicilio, uñas a domicilio, manicura a domicilio, barbero a domicilio, maquillaje a domicilio, belleza a domicilio, app belleza, Rizú">
+<link rel="canonical" href="https://yeiko-max.github.io/rizu-web/">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#6D28D9">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Rizú">
+<meta property="og:title" content="Rizú — Belleza a domicilio con profesionales verificados">
+<meta property="og:description" content="Reserva peluquería, uñas, barbería y maquillaje en tu casa. Valoraciones de doble sentido y pago con tarjeta o efectivo.">
+<meta property="og:url" content="https://yeiko-max.github.io/rizu-web/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://yeiko-max.github.io/rizu-web/#org",
+      "name": "Rizú",
+      "url": "https://yeiko-max.github.io/rizu-web/",
+      "logo": "https://yeiko-max.github.io/rizu-web/favicon.svg"
+    },
+    {
+      "@type": "MobileApplication",
+      "name": "Rizú",
+      "operatingSystem": "iOS, Android",
+      "applicationCategory": "LifestyleApplication",
+      "description": "Reserva servicios de peluquería, uñas, barbería, maquillaje y estética a domicilio con profesionales verificados.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+      "publisher": { "@id": "https://yeiko-max.github.io/rizu-web/#org" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "¿Cómo funciona Rizú?", "acceptedAnswer": { "@type": "Answer", "text": "Eliges el servicio, ves los profesionales cercanos con sus valoraciones y fotos de trabajos, reservas fecha y hora, y el profesional va a tu casa. Al terminar, ambos os valoráis." } },
+        { "@type": "Question", "name": "¿Puedo pagar en efectivo?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Puedes pagar con tarjeta desde la app o en efectivo al profesional, si acepta efectivo. Con tarjeta solo se retiene el importe y se cobra cuando el servicio termina." } },
+        { "@type": "Question", "name": "¿Qué son las valoraciones de doble sentido?", "acceptedAnswer": { "@type": "Answer", "text": "El cliente valora al profesional y el profesional valora al cliente. Las dos valoraciones se publican a la vez, cuando ambos han valorado o pasados 14 días, para que sean sinceras." } },
+        { "@type": "Question", "name": "¿Qué pasa si cancelo?", "acceptedAnswer": { "@type": "Answer", "text": "Cancelar es gratis hasta 24 horas antes. Si cancelas con menos antelación se cobra una parte del servicio para compensar al profesional." } },
+        { "@type": "Question", "name": "¿Cómo me hago profesional en Rizú?", "acceptedAnswer": { "@type": "Answer", "text": "Rellena el formulario de Trabaja con nosotros. Revisamos tu perfil, verificamos tu identidad y, una vez aprobado, eliges tus servicios, precios, horarios y zona de trabajo." } }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="salto" href="#contenido">Saltar al contenido</a>
+
+<header class="barra">
+  <div class="contenedor">
+    <a class="logo" href="./" aria-label="Rizú, inicio"><span class="logo-marca" aria-hidden="true">r</span>rizú</a>
+    <nav class="menu" aria-label="Principal">
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#seguridad">Seguridad</a>
+      <a href="#membresias">Membresías</a>
+      <a href="#preguntas">Preguntas</a>
+      <a class="boton" href="#profesionales">Soy profesional</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+  <section class="portada">
+    <div class="contenedor">
+      <div>
+        <h1>Tu peluquería, uñas y belleza, en casa.</h1>
+        <p class="entrada">Reserva en minutos a profesionales verificados que van a tu domicilio. Tú los valoras, ellos te valoran: confianza en los dos sentidos.</p>
+        <div class="acciones">
+          <a class="boton" href="#descargar">Descargar la app</a>
+          <a class="boton secundario" href="#profesionales">Quiero trabajar con Rizú</a>
+        </div>
+        <p class="tiendas">Muy pronto en App Store y Google Play.</p>
+      </div>
+      <div class="movil" aria-hidden="true">
+        <div class="movil-pantalla">
+          <div class="movil-cab">
+            <small>Hola 👋</small>
+            <strong>¿Qué te apetece hoy?</strong>
+            <div class="movil-busca">Buscar corte, uñas, barba…</div>
+          </div>
+          <div class="movil-cats">
+            <div class="movil-cat"><span style="background:#F1EAFE">✂️</span>Pelo</div>
+            <div class="movil-cat"><span style="background:#FFE4EF">💅</span>Uñas</div>
+            <div class="movil-cat"><span style="background:#E0F2FE">🧔</span>Barba</div>
+          </div>
+          <div class="movil-tarjeta">
+            <div class="movil-foto"></div>
+            <div class="movil-datos"><div><b>Laura · Peluquera</b><br>a 1,2 km</div><div>★ 4,9</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="como-funciona">
+    <div class="contenedor">
+      <span class="etiqueta">Cómo funciona</span>
+      <h2>Reservar es tan fácil como pedir un taxi</h2>
+      <p class="sub">Sin desplazamientos ni esperas: el profesional va a tu casa a la hora que elijas.</p>
+      <div class="rejilla">
+        <div class="tarjeta"><div class="paso-num">1</div><h3>Elige el servicio</h3><p>Corte, color, manicura, barba, maquillaje, depilación… con precio cerrado desde el principio.</p></div>
+        <div class="tarjeta"><div class="paso-num">2</div><h3>Escoge a tu profesional</h3><p>Compara valoraciones reales, fotos de sus trabajos y distancia. Guarda a tus favoritos.</p></div>
+        <div class="tarjeta"><div class="paso-num">3</div><h3>Síguelo en directo</h3><p>Cuando sale hacia tu casa ves su ubicación y la hora de llegada. Un PIN confirma que es quien dice ser.</p></div>
+        <div class="tarjeta"><div class="paso-num">4</div><h3>Paga y valora</h3><p>Con tarjeta o en efectivo. Después os valoráis los dos y puedes dejar propina desde la app.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicios" class="alterna">
+    <div class="contenedor">
+      <span class="etiqueta">Servicios</span>
+      <h2>Todo lo que necesitas para verte bien</h2>
+      <p class="sub">Profesionales especializados en cada categoría, cerca de ti.</p>
+      <div class="cats">
+        <div class="cat"><div class="icono" style="background:#F1EAFE">✂️</div>Peluquería</div>
+        <div class="cat"><div class="icono" style="background:#FFE4EF">💅</div>Uñas</div>
+        <div class="cat"><div class="icono" style="background:#E0F2FE">🧔</div>Barbería</div>
+        <div class="cat"><div class="icono" style="background:#FEF3C7">💄</div>Maquillaje</div>
+        <div class="cat"><div class="icono" style="background:#DCFCE7">🌿</div>Estética</div>
+        <div class="cat"><div class="icono" style="background:#FCE7F3">👁️</div>Cejas y pestañas</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="seguridad" class="oscura">
+    <div class="contenedor">
+      <span class="etiqueta">Confianza y seguridad</span>
+      <h2>Pensado para que estés tranquilo en tu casa</h2>
+      <p class="sub">Inspirado en lo mejor de las apps de movilidad, adaptado a servicios en tu hogar.</p>
+      <div class="rejilla">
+        <div class="tarjeta"><h3>⭐ Valoración doble y a ciegas</h3><p>Clientes y profesionales se valoran mutuamente. Ninguno ve la nota del otro hasta que ambos han valorado.</p></div>
+        <div class="tarjeta"><h3>🪪 Profesionales verificados</h3><p>Revisamos la identidad de cada profesional antes de que pueda aceptar reservas.</p></div>
+        <div class="tarjeta"><h3>🔐 PIN de inicio</h3><p>El servicio solo empieza cuando el profesional introduce el PIN que ves en tu app.</p></div>
+        <div class="tarjeta"><h3>📍 Seguimiento en directo</h3><p>Ves dónde está y cuánto le queda para llegar, como en un trayecto de taxi.</p></div>
+        <div class="tarjeta"><h3>🆘 Botón de ayuda</h3><p>Acceso rápido a emergencias y a reportar cualquier incidencia durante el servicio.</p></div>
+        <div class="tarjeta"><h3>🔁 Garantía de retoque</h3><p>¿No ha quedado como esperabas? Pide un retoque en los 7 días siguientes.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pagos">
+    <div class="contenedor">
+      <span class="etiqueta">Pagos</span>
+      <h2>Paga como prefieras</h2>
+      <p class="sub">Con tarjeta solo retenemos el importe al reservar y lo cobramos cuando el servicio termina. Si el profesional acepta efectivo, también puedes pagarle en mano.</p>
+      <div class="rejilla">
+        <div class="tarjeta"><div class="icono" style="background:#F1EAFE">💳</div><h3>Tarjeta</h3><p>Pago seguro procesado por Stripe. Nunca guardamos los datos de tu tarjeta.</p></div>
+        <div class="tarjeta"><div class="icono" style="background:#DCFCE7">💶</div><h3>Efectivo</h3><p>Paga directamente al profesional al terminar, sin complicaciones.</p></div>
+        <div class="tarjeta"><div class="icono" style="background:#FFE4EF">💝</div><h3>Propinas</h3><p>Si te ha encantado, deja propina desde la app. Va íntegra al profesional.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="membresias" class="alterna">
+    <div class="contenedor">
+      <span class="etiqueta">Membresías</span>
+      <h2>Ahorra más con Rizú Club y Rizú Pro+</h2>
+      <p class="sub">Opcionales, mensuales y sin permanencia. Cancela cuando quieras desde la app.</p>
+      <div class="planes">
+        <div class="plan">
+          <div class="plan-cab"><h3>Rizú Club</h3><div class="precio">9,99 € <small>/ mes</small></div><p style="margin:6px 0 0;color:#F5EDFF">Para clientes</p></div>
+          <ul>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Sin gastos de desplazamiento</li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>10 % de descuento en todos los servicios</li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Sin permanencia</li>
+          </ul>
+        </div>
+        <div class="plan pro">
+          <div class="plan-cab"><h3>Rizú Pro+</h3><div class="precio">19,99 € <small>/ mes</small></div><p style="margin:6px 0 0;color:#DDD6FE">Para profesionales</p></div>
+          <ul>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Comisión reducida del 10 %</li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Perfil destacado en las búsquedas</li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Insignia Pro+ en tu perfil</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="profesionales">
+    <div class="contenedor" style="display:grid;gap:40px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:start">
+      <div>
+        <span class="etiqueta">Trabaja con nosotros</span>
+        <h2>Gana más trabajando a tu ritmo</h2>
+        <p class="sub" style="margin-bottom:24px">Tú pones tus precios, tus horarios y tu zona. Nosotros te traemos clientes valorados.</p>
+        <div class="rejilla" style="grid-template-columns:1fr">
+          <div class="tarjeta"><h3 style="margin-top:0">📅 Agenda flexible</h3><p>Acepta solo las reservas que te encajen.</p></div>
+          <div class="tarjeta"><h3 style="margin-top:0">⭐ Clientes valorados</h3><p>Ves la valoración del cliente antes de ir a su casa.</p></div>
+          <div class="tarjeta"><h3 style="margin-top:0">💸 Cobros automáticos</h3><p>Recibe los pagos con tarjeta directamente en tu cuenta bancaria, o cobra en efectivo.</p></div>
+        </div>
+      </div>
+      <div class="tarjeta">
+        <h3 style="margin-top:0">Solicita unirte</h3>
+        <form class="form" data-tabla="solicitudes_profesionales" data-ok="¡Solicitud recibida! Te escribiremos por email con los siguientes pasos.">
+          <input class="miel" type="text" name="web_sitio" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="campo"><label for="p-nombre">Nombre y apellidos</label><input id="p-nombre" data-campo="nombre" required maxlength="120" autocomplete="name"></div>
+          <div class="fila">
+            <div class="campo"><label for="p-email">Email</label><input id="p-email" type="email" data-campo="email" required maxlength="200" autocomplete="email"></div>
+            <div class="campo"><label for="p-tel">Teléfono</label><input id="p-tel" type="tel" data-campo="telefono" maxlength="30" autocomplete="tel"></div>
+          </div>
+          <div class="fila">
+            <div class="campo"><label for="p-esp">Especialidad</label>
+              <select id="p-esp" data-campo="especialidad" required>
+                <option value="">Elige una</option>
+                <option>Peluquería</option><option>Uñas</option><option>Barbería</option>
+                <option>Maquillaje</option><option>Estética</option><option>Cejas y pestañas</option><option>Varias</option>
+              </select>
+            </div>
+            <div class="campo"><label for="p-zona">Ciudad o zona</label><input id="p-zona" data-campo="zona" required maxlength="120" placeholder="Ej. Madrid centro"></div>
+          </div>
+          <div class="campo"><label for="p-msg">Cuéntanos tu experiencia (opcional)</label><textarea id="p-msg" data-campo="mensaje" rows="4" maxlength="2000"></textarea></div>
+          <label class="check"><input type="checkbox" data-campo="acepta_privacidad" required><span>He leído y acepto la <a href="privacidad.html">política de privacidad</a>.</span></label>
+          <button class="boton" type="submit">Enviar solicitud</button>
+          <div class="aviso" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="descargar" class="oscura" style="text-align:center">
+    <div class="contenedor">
+      <span class="etiqueta">Descarga</span>
+      <h2>Rizú llega muy pronto a tu móvil</h2>
+      <p class="sub" style="margin-inline:auto">Estamos terminando los últimos detalles para publicar la app en App Store y Google Play. Déjanos tu email abajo y te avisamos el día del lanzamiento.</p>
+    </div>
+  </section>
+
+  <section id="preguntas">
+    <div class="contenedor" style="max-width:860px">
+      <span class="etiqueta">Preguntas frecuentes</span>
+      <h2>Resolvemos tus dudas</h2>
+      <details><summary>¿Cómo funciona Rizú?</summary><p>Eliges el servicio, ves los profesionales cercanos con sus valoraciones y fotos de trabajos, reservas fecha y hora, y el profesional va a tu casa. Al terminar, ambos os valoráis.</p></details>
+      <details><summary>¿Puedo pagar en efectivo?</summary><p>Sí, si el profesional acepta efectivo (lo verás en su perfil). Con tarjeta solo se retiene el importe al reservar y se cobra cuando el servicio termina.</p></details>
+      <details><summary>¿Qué son las valoraciones de doble sentido?</summary><p>El cliente valora al profesional y el profesional valora al cliente. Las dos valoraciones se publican a la vez, cuando ambos han valorado o pasados 14 días, para que sean sinceras.</p></details>
+      <details><summary>¿Qué pasa si cancelo?</summary><p>Cancelar es gratis hasta 24 horas antes. Con menos antelación se cobra una parte del servicio para compensar al profesional, que ya había reservado ese hueco.</p></details>
+      <details><summary>¿Cómo sé que el profesional es de confianza?</summary><p>Todos los profesionales se verifican antes de empezar, tienen valoraciones públicas de otros clientes y el servicio solo empieza al introducir tu PIN.</p></details>
+      <details><summary>¿Cómo me hago profesional?</summary><p>Rellena el formulario de <a href="#profesionales">Trabaja con nosotros</a>. Revisamos tu perfil y, una vez aprobado, eliges tus servicios, precios, horarios y zona.</p></details>
+      <details><summary>¿Cómo elimino mi cuenta?</summary><p>Desde la app, en Perfil → Eliminar cuenta, o desde <a href="eliminar-cuenta.html">esta página</a>.</p></details>
+    </div>
+  </section>
+
+  <section id="contacto" class="alterna">
+    <div class="contenedor" style="max-width:760px">
+      <span class="etiqueta">Contacto</span>
+      <h2>Escríbenos</h2>
+      <p class="sub">Dudas, sugerencias, prensa o avisarte del lanzamiento: te respondemos por email.</p>
+      <form class="form tarjeta" data-tabla="contactos" data-ok="¡Mensaje recibido! Te responderemos por email lo antes posible.">
+        <input class="miel" type="text" name="web_sitio" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="fila">
+          <div class="campo"><label for="c-nombre">Nombre</label><input id="c-nombre" data-campo="nombre" required maxlength="120" autocomplete="name"></div>
+          <div class="campo"><label for="c-email">Email</label><input id="c-email" type="email" data-campo="email" required maxlength="200" autocomplete="email"></div>
+        </div>
+        <div class="campo"><label for="c-tipo">Motivo</label>
+          <select id="c-tipo" data-campo="tipo" required>
+            <option value="soporte">Ayuda o dudas</option>
+            <option value="otro">Avisadme del lanzamiento</option>
+            <option value="prensa">Prensa y colaboraciones</option>
+            <option value="otro">Otro</option>
+          </select>
+        </div>
+        <div class="campo"><label for="c-msg">Mensaje</label><textarea id="c-msg" data-campo="mensaje" rows="5" required maxlength="4000"></textarea></div>
+        <label class="check"><input type="checkbox" required><span>He leído y acepto la <a href="privacidad.html">política de privacidad</a>.</span></label>
+        <button class="boton" type="submit">Enviar mensaje</button>
+        <div class="aviso" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="contenedor">
+    <div class="pie">
+      <div>
+        <a class="logo" href="./" style="color:#fff"><span class="logo-marca" aria-hidden="true">r</span>rizú</a>
+        <p style="margin-top:12px">Belleza a domicilio con confianza en los dos sentidos.</p>
+      </div>
+      <div><h4>Rizú</h4><ul><li><a href="#como-funciona">Cómo funciona</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#membresias">Membresías</a></li><li><a href="#preguntas">Preguntas frecuentes</a></li></ul></div>
+      <div><h4>Profesionales</h4><ul><li><a href="#profesionales">Trabaja con nosotros</a></li><li><a href="#membresias">Rizú Pro+</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="privacidad.html">Política de privacidad</a></li><li><a href="terminos.html">Términos y condiciones</a></li><li><a href="eliminar-cuenta.html">Eliminar cuenta</a></li><li><a href="#contacto">Contacto</a></li></ul></div>
+    </div>
+    <div class="legal-pie">© <span id="anio">2026</span> Rizú. Todos los derechos reservados.</div>
+  </div>
+</footer>
+<script src="formularios.js"></script>
+</body>
+</html>

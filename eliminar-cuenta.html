@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eliminar cuenta — Rizú</title>
+<meta name="description" content="Cómo eliminar tu cuenta de Rizú y tus datos personales.">
+<link rel="canonical" href="https://yeiko-max.github.io/rizu-web/eliminar-cuenta.html">
+<meta name="theme-color" content="#6D28D9">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="barra">
+  <div class="contenedor">
+    <a class="logo" href="./" aria-label="Rizú, inicio"><span class="logo-marca" aria-hidden="true">r</span>rizú</a>
+    <nav class="menu" aria-label="Principal"><a href="./">Inicio</a><a href="./#preguntas">Preguntas</a><a class="boton" href="./#contacto">Contacto</a></nav>
+  </div>
+</header>
+<main class="legal"><div class="contenedor"><article>
+<h1>Eliminar tu cuenta de Rizú</h1>
+<p>Puedes eliminar tu cuenta y tus datos personales en cualquier momento.</p>
+<h2>Desde la app (más rápido)</h2>
+<ol><li>Abre Rizú e inicia sesión.</li><li>Ve a <strong>Perfil</strong>.</li><li>Pulsa <strong>Eliminar cuenta</strong> y confirma.</li></ol>
+<p>Si tienes reservas pendientes o en curso, primero tendrás que terminarlas o cancelarlas.</p>
+<h2>Desde esta web</h2>
+<p>Si ya no tienes la app, envíanos este formulario con el email de tu cuenta. Te pediremos confirmación por email y eliminaremos la cuenta en un máximo de 30 días.</p>
+<form class="form" data-tabla="contactos" data-tipo="borrar_cuenta" data-ok="Solicitud recibida. Te escribiremos al email de tu cuenta para confirmarla.">
+  <input class="miel" type="text" name="web_sitio" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <div class="fila">
+    <div class="campo"><label for="b-nombre">Nombre</label><input id="b-nombre" data-campo="nombre" required maxlength="120" autocomplete="name"></div>
+    <div class="campo"><label for="b-email">Email de tu cuenta</label><input id="b-email" type="email" data-campo="email" required maxlength="200" autocomplete="email"></div>
+  </div>
+  <div class="campo"><label for="b-msg">Comentario (opcional)</label><textarea id="b-msg" data-campo="mensaje" rows="3" maxlength="2000"></textarea></div>
+  <button class="boton" type="submit">Solicitar eliminación</button>
+  <div class="aviso" role="status" aria-live="polite"></div>
+</form>
+<h2>Qué datos se borran</h2>
+<p>Se eliminan tu perfil, fotos, direcciones, favoritos y mensajes. Las valoraciones se anonimizan. Conservamos solo los datos de pagos que la ley obliga a guardar (normalmente 6 años) y los borramos al terminar ese plazo.</p>
+</article></div></main>
+<footer>
+  <div class="contenedor">
+    <div class="pie">
+      <div><a class="logo" href="./" style="color:#fff"><span class="logo-marca" aria-hidden="true">r</span>rizú</a></div>
+      <div><h4>Legal</h4><ul><li><a href="privacidad.html">Política de privacidad</a></li><li><a href="terminos.html">Términos y condiciones</a></li><li><a href="eliminar-cuenta.html">Eliminar cuenta</a></li></ul></div>
+    </div>
+    <div class="legal-pie">© <span id="anio">2026</span> Rizú. Todos los derechos reservados.</div>
+  </div>
+</footer>
+<script src="formularios.js"></script>
+</body>
+</html>
