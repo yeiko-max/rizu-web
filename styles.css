@@ -152,3 +152,22 @@ footer a:hover { color: #fff; text-decoration: underline; }
   .portada { padding: 48px 0 72px; }
   .menu a:not(.boton) { display: none; }
 }
+
+/* Membresías: selector mensual/anual y comparativas */
+.periodo { display: inline-flex; gap: 4px; padding: 4px; background: var(--violeta-suave); border-radius: 16px; margin-bottom: 28px; }
+.periodo button { font: inherit; font-weight: 800; border: 0; background: transparent; color: var(--texto-suave); padding: 10px 22px; border-radius: 12px; cursor: pointer; min-height: 44px; }
+.periodo button[aria-pressed="true"] { background: #fff; color: var(--texto); box-shadow: var(--sombra); }
+.ahorro { display: inline-block; margin-left: 6px; font-size: 12px; color: #fff; background: var(--verde); padding: 2px 8px; border-radius: 999px; }
+.regalo { display: inline-block; vertical-align: middle; margin-left: 8px; font-size: 12px; font-weight: 800; color: #78350F; background: #FCD34D; padding: 3px 10px; border-radius: 999px; }
+.detalle { margin: 6px 0 0; color: #F5EDFF; font-size: 15px; }
+.plan.pro .detalle { color: #DDD6FE; }
+.compara { width: 100%; border-collapse: collapse; font-size: 15px; }
+.compara th, .compara td { padding: 13px 16px; text-align: center; border-bottom: 1px solid var(--borde); }
+.compara th[scope="row"], .compara thead th:first-child { text-align: left; font-weight: 600; }
+.compara thead th { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--texto-suave); background: var(--violeta-suave); }
+.compara thead th:last-child { color: var(--rosa); }
+.plan.pro .compara thead th:last-child { color: var(--violeta); }
+.compara td { color: var(--texto-suave); }
+.compara td.si { color: var(--verde); font-weight: 800; }
+.compara tbody tr:last-child th, .compara tbody tr:last-child td { border-bottom: 0; }
+.nota-planes { margin: 24px 0 0; color: var(--texto-suave); font-size: 15px; text-align: center; }

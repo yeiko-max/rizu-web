@@ -47,7 +47,8 @@
         { "@type": "Question", "name": "¿Cómo funciona Rizú?", "acceptedAnswer": { "@type": "Answer", "text": "Eliges el servicio, ves los profesionales cercanos con sus valoraciones y fotos de trabajos, reservas fecha y hora, y el profesional va a tu casa. Al terminar, ambos os valoráis." } },
         { "@type": "Question", "name": "¿Puedo pagar en efectivo?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Puedes pagar con tarjeta desde la app o en efectivo al profesional, si acepta efectivo. Con tarjeta solo se retiene el importe y se cobra cuando el servicio termina." } },
         { "@type": "Question", "name": "¿Qué son las valoraciones de doble sentido?", "acceptedAnswer": { "@type": "Answer", "text": "El cliente valora al profesional y el profesional valora al cliente. Las dos valoraciones se publican a la vez, cuando ambos han valorado o pasados 14 días, para que sean sinceras." } },
-        { "@type": "Question", "name": "¿Qué pasa si cancelo?", "acceptedAnswer": { "@type": "Answer", "text": "Cancelar es gratis hasta 24 horas antes. Si cancelas con menos antelación se cobra una parte del servicio para compensar al profesional." } },
+        { "@type": "Question", "name": "¿Qué pasa si cancelo?", "acceptedAnswer": { "@type": "Answer", "text": "Cancelar es gratis hasta 24 horas antes, o hasta 3 horas antes con Rizú Club. Si cancelas con menos antelación se cobra una parte del servicio para compensar al profesional." } },
+        { "@type": "Question", "name": "¿Puedo pagar la membresía al año?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Rizú Club y Rizú Pro+ se pueden pagar cada mes o una vez al año. El pago anual equivale a 4 meses gratis: 79,90 € al año el Club y 159,90 € al año el Pro+." } },
         { "@type": "Question", "name": "¿Cómo me hago profesional en Rizú?", "acceptedAnswer": { "@type": "Answer", "text": "Rellena el formulario de Trabaja con nosotros. Revisamos tu perfil, verificamos tu identidad y, una vez aprobado, eliges tus servicios, precios, horarios y zona de trabajo." } }
       ]
     }
@@ -146,7 +147,7 @@
         <div class="tarjeta"><h3>🔐 PIN de inicio</h3><p>El servicio solo empieza cuando el profesional introduce el PIN que ves en tu app.</p></div>
         <div class="tarjeta"><h3>📍 Seguimiento en directo</h3><p>Ves dónde está y cuánto le queda para llegar, como en un trayecto de taxi.</p></div>
         <div class="tarjeta"><h3>🆘 Botón de ayuda</h3><p>Acceso rápido a emergencias y a reportar cualquier incidencia durante el servicio.</p></div>
-        <div class="tarjeta"><h3>🔁 Garantía de retoque</h3><p>¿No ha quedado como esperabas? Pide un retoque en los 7 días siguientes.</p></div>
+        <div class="tarjeta"><h3>🔁 Garantía de retoque</h3><p>¿No ha quedado como esperabas? Pide un retoque en los 7 días siguientes (14 con Rizú Club).</p></div>
       </div>
     </div>
   </section>
@@ -168,25 +169,50 @@
     <div class="contenedor">
       <span class="etiqueta">Membresías</span>
       <h2>Ahorra más con Rizú Club y Rizú Pro+</h2>
-      <p class="sub">Opcionales, mensuales y sin permanencia. Cancela cuando quieras desde la app.</p>
+      <p class="sub">Opcionales y sin permanencia. Paga cada mes o una vez al año y llévate <strong>4 meses gratis</strong>.</p>
+      <div class="periodo" role="group" aria-label="Forma de pago">
+        <button type="button" data-periodo="mensual" aria-pressed="false">Mensual</button>
+        <button type="button" data-periodo="anual" aria-pressed="true">Anual <span class="ahorro">−33 %</span></button>
+      </div>
       <div class="planes">
         <div class="plan">
-          <div class="plan-cab"><h3>Rizú Club</h3><div class="precio">9,99 € <small>/ mes</small></div><p style="margin:6px 0 0;color:#F5EDFF">Para clientes</p></div>
-          <ul>
-            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Sin gastos de desplazamiento</li>
-            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>10 % de descuento en todos los servicios</li>
-            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Sin permanencia</li>
-          </ul>
+          <div class="plan-cab">
+            <h3>Rizú Club <span class="regalo" data-solo="anual">4 meses gratis</span></h3>
+            <div class="precio"><span data-mensual="9,99 €" data-anual="6,66 €">6,66 €</span> <small>/ mes</small></div>
+            <p class="detalle" data-mensual="Para clientes · cancela cuando quieras" data-anual="79,90 € al año · ahorras 39,98 €">79,90 € al año · ahorras 39,98 €</p>
+          </div>
+          <table class="compara">
+            <caption class="salto">Rizú Club frente a la cuenta gratis</caption>
+            <thead><tr><th scope="col">Ventaja</th><th scope="col">Gratis</th><th scope="col">Club</th></tr></thead>
+            <tbody>
+            <tr><th scope="row">Desplazamiento</th><td>2 €</td><td class="si">Gratis</td></tr>
+            <tr><th scope="row">Descuento en servicios</th><td>—</td><td class="si">15 %</td></tr>
+            <tr><th scope="row">Cancelación gratis</th><td>Hasta 24 h antes</td><td class="si">Hasta 3 h antes</td></tr>
+            <tr><th scope="row">Garantía de retoque</th><td>7 días</td><td class="si">14 días</td></tr>
+            <tr><th scope="row">Atención prioritaria</th><td>—</td><td class="si">Sí</td></tr>
+            </tbody>
+          </table>
         </div>
         <div class="plan pro">
-          <div class="plan-cab"><h3>Rizú Pro+</h3><div class="precio">19,99 € <small>/ mes</small></div><p style="margin:6px 0 0;color:#DDD6FE">Para profesionales</p></div>
-          <ul>
-            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Comisión reducida del 10 %</li>
-            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Perfil destacado en las búsquedas</li>
-            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Insignia Pro+ en tu perfil</li>
-          </ul>
+          <div class="plan-cab">
+            <h3>Rizú Pro+ <span class="regalo" data-solo="anual">4 meses gratis</span></h3>
+            <div class="precio"><span data-mensual="19,99 €" data-anual="13,33 €">13,33 €</span> <small>/ mes</small></div>
+            <p class="detalle" data-mensual="Para profesionales · cancela cuando quieras" data-anual="159,90 € al año · ahorras 79,98 €">159,90 € al año · ahorras 79,98 €</p>
+          </div>
+          <table class="compara">
+            <caption class="salto">Rizú Pro+ frente a la cuenta gratis</caption>
+            <thead><tr><th scope="col">Ventaja</th><th scope="col">Gratis</th><th scope="col">Pro+</th></tr></thead>
+            <tbody>
+            <tr><th scope="row">Comisión por servicio</th><td>15 %</td><td class="si">8 %</td></tr>
+            <tr><th scope="row">Posición en búsquedas</th><td>Normal</td><td class="si">Destacado</td></tr>
+            <tr><th scope="row">Insignia Pro+</th><td>—</td><td class="si">Sí</td></tr>
+            <tr><th scope="row">Límite de saldo en efectivo</th><td>60 €</td><td class="si">150 €</td></tr>
+            <tr><th scope="row">Atención prioritaria</th><td>—</td><td class="si">Sí</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
+      <p class="nota-planes">Al crear tu cuenta en la app te enseñaremos las membresías; es totalmente opcional y puedes seguir gratis. El plan anual se cobra de una vez.</p>
     </div>
   </section>
 
@@ -245,7 +271,8 @@
       <details><summary>¿Cómo funciona Rizú?</summary><p>Eliges el servicio, ves los profesionales cercanos con sus valoraciones y fotos de trabajos, reservas fecha y hora, y el profesional va a tu casa. Al terminar, ambos os valoráis.</p></details>
       <details><summary>¿Puedo pagar en efectivo?</summary><p>Sí, si el profesional acepta efectivo (lo verás en su perfil). Con tarjeta solo se retiene el importe al reservar y se cobra cuando el servicio termina.</p></details>
       <details><summary>¿Qué son las valoraciones de doble sentido?</summary><p>El cliente valora al profesional y el profesional valora al cliente. Las dos valoraciones se publican a la vez, cuando ambos han valorado o pasados 14 días, para que sean sinceras.</p></details>
-      <details><summary>¿Qué pasa si cancelo?</summary><p>Cancelar es gratis hasta 24 horas antes. Con menos antelación se cobra una parte del servicio para compensar al profesional, que ya había reservado ese hueco.</p></details>
+      <details><summary>¿Qué pasa si cancelo?</summary><p>Cancelar es gratis hasta 24 horas antes (hasta 3 horas antes si eres de Rizú Club). Con menos antelación se cobra una parte del servicio para compensar al profesional, que ya había reservado ese hueco.</p></details>
+      <details><summary>¿Puedo pagar la membresía al año?</summary><p>Sí. Rizú Club y Rizú Pro+ se pueden pagar cada mes o una vez al año. El pago anual equivale a 4 meses gratis (un 33 % menos): 79,90 € al año el Club y 159,90 € al año el Pro+.</p></details>
       <details><summary>¿Cómo sé que el profesional es de confianza?</summary><p>Todos los profesionales se verifican antes de empezar, tienen valoraciones públicas de otros clientes y el servicio solo empieza al introducir tu PIN.</p></details>
       <details><summary>¿Cómo me hago profesional?</summary><p>Rellena el formulario de <a href="#profesionales">Trabaja con nosotros</a>. Revisamos tu perfil y, una vez aprobado, eliges tus servicios, precios, horarios y zona.</p></details>
       <details><summary>¿Cómo elimino mi cuenta?</summary><p>Desde la app, en Perfil → Eliminar cuenta, o desde <a href="eliminar-cuenta.html">esta página</a>.</p></details>

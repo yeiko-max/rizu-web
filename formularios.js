@@ -50,6 +50,15 @@
     });
   });
 
+  // Membresías: cambiar entre precio mensual y anual
+  var botones = document.querySelectorAll('.periodo button');
+  function verPeriodo(periodo) {
+    botones.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-periodo') === periodo)); });
+    document.querySelectorAll('[data-' + periodo + ']').forEach(function (el) { el.textContent = el.getAttribute('data-' + periodo); });
+    document.querySelectorAll('[data-solo]').forEach(function (el) { el.hidden = el.getAttribute('data-solo') !== periodo; });
+  }
+  botones.forEach(function (b) { b.addEventListener('click', function () { verPeriodo(b.getAttribute('data-periodo')); }); });
+
   var anio = document.getElementById('anio');
   if (anio) anio.textContent = new Date().getFullYear();
 })();
