@@ -32,7 +32,8 @@ img, svg { display: block; max-width: 100%; }
 .barra { position: sticky; top: 0; z-index: 50; background: rgba(250, 248, 255, 0.88); backdrop-filter: blur(12px); border-bottom: 1px solid var(--borde); }
 .barra .contenedor { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 0; flex-wrap: wrap; }
 .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--texto); font-weight: 800; font-size: 24px; letter-spacing: -0.5px; }
-.logo-marca { width: 36px; height: 36px; border-radius: 11px; background: var(--grad); display: grid; place-items: center; color: #fff; font-size: 20px; font-weight: 800; }
+.logo-marca { width: 36px; height: 36px; border-radius: 11px; background: var(--grad); display: grid; place-items: center; flex: none; box-shadow: 0 4px 12px rgba(124, 58, 237, 0.25); }
+.logo-marca svg { width: 100%; height: 100%; display: block; }
 .menu { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
 .menu a { text-decoration: none; color: var(--texto); font-weight: 600; font-size: 15px; padding: 10px 12px; border-radius: 10px; }
 .menu a:hover { background: var(--violeta-suave); color: var(--violeta-osc); }
@@ -173,3 +174,17 @@ footer a:hover { color: #fff; text-decoration: underline; }
 .nota-planes { margin: 24px 0 0; color: var(--texto-suave); font-size: 15px; text-align: center; }
 
 [hidden] { display: none !important; }
+
+/* Animación de entrada */
+.intro { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; background: var(--grad); color: #fff; cursor: pointer; transition: clip-path .7s cubic-bezier(.7,0,.2,1), opacity .7s; clip-path: inset(0 0 0 0); }
+.intro.fuera { clip-path: inset(0 0 100% 0); pointer-events: none; }
+.intro-caja { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+.intro svg { width: 120px; height: 120px; overflow: visible; }
+.intro .rizo { stroke-dasharray: 100; stroke-dashoffset: 100; animation: trazo 1.1s .15s cubic-bezier(.65,0,.35,1) forwards; }
+.intro .chispa { transform-origin: 49px 14.5px; transform: scale(0) rotate(-90deg); animation: chispa .5s 1.05s cubic-bezier(.3,1.6,.5,1) forwards; }
+.intro-nombre { font-size: 46px; font-weight: 800; letter-spacing: -1px; opacity: 0; transform: translateY(12px); animation: aparece .55s 1.15s ease-out forwards; }
+.intro-lema { font-size: 16px; opacity: 0; animation: aparece .55s 1.4s ease-out forwards; letter-spacing: .3px; }
+@keyframes trazo { to { stroke-dashoffset: 0; } }
+@keyframes chispa { to { transform: scale(1) rotate(0); } }
+@keyframes aparece { to { opacity: .95; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .intro { display: none; } }

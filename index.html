@@ -57,11 +57,26 @@
 </script>
 </head>
 <body>
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro-caja">
+    <svg viewBox="0 0 64 64"><path class="rizo" pathLength="100" d="M44 20c-4-6-13-8-19.5-4C18 20 16 29 19.5 36S32 46 39 42.5s8.5-12.5 3.5-17.5-13-3.5-14.5 2 3 9.5 7.5 7" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><path class="chispa" d="M49 9l1.6 3.9 3.9 1.6-3.9 1.6L49 20l-1.6-3.9-3.9-1.6 3.9-1.6z" fill="#fff"/></svg>
+    <div class="intro-nombre">rizú</div>
+    <div class="intro-lema">Belleza a domicilio</div>
+  </div>
+</div>
+<script>
+(function(){var el=document.getElementById('intro');if(!el)return;var visto=false;try{visto=sessionStorage.getItem('rizu_intro')==='1';sessionStorage.setItem('rizu_intro','1');}catch(e){}
+if(visto||(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)){el.remove();return;}
+document.documentElement.style.overflow='hidden';
+function cerrar(){if(el.classList.contains('fuera'))return;el.classList.add('fuera');document.documentElement.style.overflow='';setTimeout(function(){el.remove();},800);}
+el.addEventListener('click',cerrar);setTimeout(cerrar,2300);})();
+</script>
+
 <a class="salto" href="#contenido">Saltar al contenido</a>
 
 <header class="barra">
   <div class="contenedor">
-    <a class="logo" href="./" aria-label="Rizú, inicio"><span class="logo-marca" aria-hidden="true">r</span>rizú</a>
+    <a class="logo" href="./" aria-label="Rizú, inicio"><span class="logo-marca" aria-hidden="true"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M44 20c-4-6-13-8-19.5-4C18 20 16 29 19.5 36S32 46 39 42.5s8.5-12.5 3.5-17.5-13-3.5-14.5 2 3 9.5 7.5 7" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M49 9l1.6 3.9 3.9 1.6-3.9 1.6L49 20l-1.6-3.9-3.9-1.6 3.9-1.6z" fill="#fff"/></svg></span>rizú</a>
     <nav class="menu" aria-label="Principal">
       <a href="#como-funciona">Cómo funciona</a>
       <a href="#servicios">Servicios</a>
@@ -314,7 +329,7 @@
   <div class="contenedor">
     <div class="pie">
       <div>
-        <a class="logo" href="./" style="color:#fff"><span class="logo-marca" aria-hidden="true">r</span>rizú</a>
+        <a class="logo" href="./" style="color:#fff"><span class="logo-marca" aria-hidden="true"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M44 20c-4-6-13-8-19.5-4C18 20 16 29 19.5 36S32 46 39 42.5s8.5-12.5 3.5-17.5-13-3.5-14.5 2 3 9.5 7.5 7" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M49 9l1.6 3.9 3.9 1.6-3.9 1.6L49 20l-1.6-3.9-3.9-1.6 3.9-1.6z" fill="#fff"/></svg></span>rizú</a>
         <p style="margin-top:12px">Belleza a domicilio con confianza en los dos sentidos.</p>
       </div>
       <div><h4>Rizú</h4><ul><li><a href="#como-funciona">Cómo funciona</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#membresias">Membresías</a></li><li><a href="#preguntas">Preguntas frecuentes</a></li></ul></div>
