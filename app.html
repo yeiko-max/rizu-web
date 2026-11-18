@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reservar — Rizú · Belleza a domicilio</title>
+<meta name="description" content="Reserva online peluquería, uñas, barbería, maquillaje y estética a domicilio con profesionales verificados. Paga con tarjeta o en efectivo.">
+<link rel="canonical" href="https://yeiko-max.github.io/rizu-web/app.html">
+<meta name="theme-color" content="#6D28D9">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<a class="salto" href="#vista">Saltar al contenido</a>
+<header class="barra">
+  <div class="contenedor">
+    <a class="logo" href="./" aria-label="Rizú, inicio"><span class="logo-marca" aria-hidden="true">r</span>rizú</a>
+    <nav class="usuario-menu" id="menu" aria-label="Tu cuenta"></nav>
+  </div>
+</header>
+
+<main class="app-main" id="vista" tabindex="-1">
+  <div class="contenedor"><div class="cargando">Cargando…</div></div>
+</main>
+
+<footer>
+  <div class="contenedor">
+    <div class="pie">
+      <div><a class="logo" href="./" style="color:#fff"><span class="logo-marca" aria-hidden="true">r</span>rizú</a>
+        <p style="margin-top:12px">Belleza a domicilio con confianza en los dos sentidos.</p></div>
+      <div><h4>Legal</h4><ul><li><a href="privacidad.html">Política de privacidad</a></li><li><a href="terminos.html">Términos y condiciones</a></li><li><a href="reembolsos.html">Cancelaciones y reembolsos</a></li><li><a href="eliminar-cuenta.html">Eliminar cuenta</a></li><li><a href="./#contacto">Atención al cliente</a></li></ul></div>
+    </div>
+    <div class="legal-pie">© <span id="anio">2026</span> Rizú. Todos los derechos reservados.</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://js.stripe.com/v3/"></script>
+<script src="app.js"></script>
+</body>
+</html>

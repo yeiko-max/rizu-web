@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alta de cobros — Rizú</title>
+<meta name="description" content="Vuelve a la app de Rizú para continuar el alta.">
+<link rel="canonical" href="https://yeiko-max.github.io/rizu-web/cobros-reintentar.html">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#6D28D9">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="barra">
+  <div class="contenedor">
+    <a class="logo" href="./" aria-label="Rizú, inicio"><span class="logo-marca" aria-hidden="true">r</span>rizú</a>
+    <nav class="menu" aria-label="Principal"><a href="./">Inicio</a><a href="./#preguntas">Preguntas</a><a class="boton" href="./#contacto">Contacto</a></nav>
+  </div>
+</header>
+<main class="legal"><div class="contenedor"><article>
+<h1>El enlace ha caducado</h1>
+<p>Por seguridad, el enlace de alta de Stripe solo se puede usar una vez y durante unos minutos.</p>
+<p>Vuelve a la app y pulsa otra vez <strong>Configurar cobros</strong>: continuarás donde lo dejaste.</p>
+<p><a class="boton" href="rizu://pro/cobros">Volver a Rizú</a></p>
+<script>
+  // Vuelve a la app de Rizú (cierra la ventana de Stripe en el móvil)
+  setTimeout(function () { location.href = 'rizu://pro/cobros'; }, 600);
+</script>
+</article></div></main>
+<footer>
+  <div class="contenedor">
+    <div class="pie">
+      <div><a class="logo" href="./" style="color:#fff"><span class="logo-marca" aria-hidden="true">r</span>rizú</a></div>
+      <div><h4>Legal</h4><ul><li><a href="privacidad.html">Política de privacidad</a></li><li><a href="terminos.html">Términos y condiciones</a></li><li><a href="reembolsos.html">Cancelaciones y reembolsos</a></li><li><a href="eliminar-cuenta.html">Eliminar cuenta</a></li></ul></div>
+    </div>
+    <div class="legal-pie">© <span id="anio">2026</span> Rizú. Todos los derechos reservados.</div>
+  </div>
+</footer>
+<script src="formularios.js"></script>
+</body>
+</html>
