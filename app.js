@@ -6,7 +6,8 @@
   // ---------- Configuración (claves públicas: se pueden ver en el navegador sin problema) ----------
   var SUPABASE_URL = 'https://jljuuytjivrxhjugxjaz.supabase.co';
   var SUPABASE_KEY = 'sb_publishable_O9HxRqA9a-VTyEogOj6cgg__E0dhlQO';
-  var STRIPE_PK = 'pk_test_51UbPmUHr7XUHZJnVV67OQVzsomsRdNOvKl3PTAjUldrOdt28Y60xSxOJNapoIeKk4q7I4U05cCs9U2BAyxpjd6YI00qgOgLagp'; // clave publicable de Stripe (pk_test_... o pk_live_...). Vacía = solo efectivo.
+  var STRIPE_PK = ''; // Fase piloto: sin tarjeta. Clave del sandbox: 'pk_test_51UbPmUHr7XUHZJnVV67OQVzsomsRdNOvKl3PTAjUldrOdt28Y60xSxOJNapoIeKk4q7I4U05cCs9U2BAyxpjd6YI00qgOgLagp'.
+  var PILOTO = true; // fase de lanzamiento: pago directo a la profesional, sin comisiones ni membresías // clave publicable de Stripe (pk_test_... o pk_live_...). Vacía = solo efectivo.
   var URL_APP = 'https://yeiko-max.github.io/rizu-web/app.html';
   var DIAS = 7, PASO_MIN = 30, DESPLAZAMIENTO = 200;
   var REGLAS_BASE = { club: false, cancel_horas: 24, dias_retoque: 7 };
@@ -135,7 +136,7 @@
     pintar('<section class="hero-app"><h1>Hola' + (nombre ? ', ' + esc(nombre) : '') + ' 👋</h1><p>¿Qué te apetece hoy? Te mostramos profesionales que van a tu zona.</p>' +
       '<form class="busca" id="f-zona"><label class="salto" for="zona">Tu dirección o barrio</label><input id="zona" placeholder="Tu dirección o barrio (p. ej. Chamberí, Madrid)" autocomplete="street-address">' +
       '<button class="boton" type="submit">Buscar</button><button class="boton secundario" type="button" id="gps" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.6)">📍 Usar mi ubicación</button></form></section>' +
-      (estado.reglas.club ? '' : '<p class="nota-peq" style="margin:-8px 0 14px">💎 Con <a href="#/cuenta">Rizú Club</a> no pagas desplazamiento y tienes un 15 % de descuento.</p>') +
+      (PILOTO ? '<p class="nota-peq" style="margin:-8px 0 14px">🚀 Fase de lanzamiento: pagas directamente a la profesional y Rizú no cobra comisión.</p>' : estado.reglas.club ? '' : '<p class="nota-peq" style="margin:-8px 0 14px">💎 Con <a href="#/cuenta">Rizú Club</a> no pagas desplazamiento y tienes un 15 % de descuento.</p>') +
       '<div class="chips" role="group" aria-label="Categorías">' +
       '<button class="chip" data-cat="" aria-pressed="' + (!estado.categoria) + '">Todo</button>' +
       estado.cats.map(function (c) { return '<button class="chip" data-cat="' + esc(c.slug) + '" aria-pressed="' + (estado.categoria === c.slug) + '">' + (EMOJI[c.slug] || '') + ' ' + esc(c.nombre) + '</button>'; }).join('') +
@@ -274,11 +275,12 @@
       '<div class="campo"><label for="notas">Notas para la profesional (opcional)</label><textarea id="notas" rows="2" maxlength="500" placeholder="Portero automático, mascotas, alergias…"></textarea></div></div>' +
       '<h2 class="seccion-t">Cómo pagas</h2><div class="metodos" role="radiogroup" aria-label="Forma de pago">' +
       '<button class="metodo" type="button" data-m="tarjeta" role="radio" aria-pressed="' + (sel.metodo === 'tarjeta') + '" aria-checked="' + (sel.metodo === 'tarjeta') + '"' + (aceptaTarjeta ? '' : ' disabled') + '><b>💳 Tarjeta</b><small>' + (aceptaTarjeta ? 'Solo se retiene; se cobra al terminar' : (stripe ? 'No disponible con esta profesional' : 'Muy pronto en la web')) + '</small></button>' +
-      '<button class="metodo" type="button" data-m="efectivo" role="radio" aria-pressed="' + (sel.metodo === 'efectivo') + '" aria-checked="' + (sel.metodo === 'efectivo') + '"' + (aceptaEfectivo ? '' : ' disabled') + '><b>💶 Efectivo</b><small>' + (aceptaEfectivo ? 'En mano al terminar' : 'No disponible con esta profesional') + '</small></button></div>' +
+      '<button class="metodo" type="button" data-m="efectivo" role="radio" aria-pressed="' + (sel.metodo === 'efectivo') + '" aria-checked="' + (sel.metodo === 'efectivo') + '"' + (aceptaEfectivo ? '' : ' disabled') + '><b>💶 Efectivo</b><small>' + (aceptaEfectivo ? (PILOTO ? 'Efectivo o Bizum a la profesional al terminar' : 'En mano al terminar') : 'No disponible con esta profesional') + '</small></button></div>' +
       '<div class="resumen"><div class="fila"><span>Servicio</span><span>' + euros(s.precio_cent) + '</span></div>' +
       (club ? '<div class="fila"><span>Descuento Rizú Club (15 %)</span><span>−' + euros(s.precio_cent - precio) + '</span></div>' : '') +
       '<div class="fila"><span>Desplazamiento</span><span>' + (club ? 'Gratis con Club' : euros(DESPLAZAMIENTO)) + '</span></div>' +
       '<div class="fila total"><span>Total</span><span>' + euros(total) + '</span></div>' +
+      (PILOTO ? '<p class="nota-peq">🚀 Fase de lanzamiento: pagas directamente a la profesional (efectivo o Bizum). Rizú no cobra comisión.</p>' : '') +
       '<p class="nota-peq">Cancelación gratis hasta ' + estado.reglas.cancel_horas + ' h antes. <a href="reembolsos.html" target="_blank">Política de cancelaciones</a>.</p></div>' +
       '<button class="boton" id="confirmar" type="button" style="width:100%" disabled>Elige una hora</button><div class="aviso" id="av-reserva" role="status" aria-live="polite" style="margin-top:12px"></div>');
 
@@ -464,7 +466,7 @@
       pintar('<h1 style="margin-top:0">Mi cuenta</h1>' +
         '<div class="tarjeta" style="margin-bottom:24px"><b>' + esc(estado.perfil && estado.perfil.nombre || '') + '</b><div class="meta">' + esc(u.email) + '</div>' +
         '<div class="acciones" style="margin-top:12px"><button class="boton peq secundario" id="salir" type="button">Cerrar sesión</button><a class="boton peq peligro" href="eliminar-cuenta.html">Eliminar cuenta</a></div></div>' +
-        (plan ? '<h2 class="seccion-t">Rizú Club</h2><p class="nota-peq" style="margin-bottom:14px">Opcional y sin permanencia.</p>' +
+        (plan && !PILOTO ? '<h2 class="seccion-t">Rizú Club</h2><p class="nota-peq" style="margin-bottom:14px">Opcional y sin permanencia.</p>' +
           (mio && mio.activo ? '' : '<div class="periodo" role="group" aria-label="Forma de pago"><button type="button" data-p="mensual" aria-pressed="' + (periodo === 'mensual') + '">Mensual</button><button type="button" data-p="anual" aria-pressed="' + (periodo === 'anual') + '">Anual <span class="ahorro">−33 %</span></button></div>') +
           htmlPlan() : '') +
         '<h2 class="seccion-t">¿Eres profesional?</h2><p>Gestiona tu agenda, cobros y Rizú Pro+ desde la app de Rizú. <a href="./#profesionales">Solicita unirte</a>.</p>');
