@@ -211,7 +211,7 @@
       (pr.bio ? '<p>' + esc(pr.bio) + '</p>' : '') +
       '<div class="stats"><div class="stat"><b>★ ' + (pr.num_valoraciones ? Number(pr.nota).toFixed(1).replace('.', ',') : '—') + '</b><span>' + pr.num_valoraciones + ' valoraciones</span></div>' +
       '<div class="stat"><b>' + (pr.servicios_hechos || 0) + '</b><span>servicios hechos</span></div>' +
-      '<div class="stat"><b>' + (pr.tasa_puntualidad != null ? Math.round(pr.tasa_puntualidad * 100) + ' %' : '—') + '</b><span>puntualidad</span></div></div>' +
+      '<div class="stat"><b>' + (pr.tasa_puntualidad != null ? Math.round(pr.tasa_puntualidad) + ' %' : '—') + '</b><span>puntualidad</span></div></div>' +
       '<h2 class="seccion-t">Servicios</h2>' +
       (servicios.length ? servicios.map(function (s) {
         return '<div class="servicio"><div><h4>' + esc(s.nombre) + '</h4><div class="meta">' + s.duracion_min + ' min' + (s.descripcion ? ' · ' + esc(s.descripcion) : '') + '</div></div>' +
