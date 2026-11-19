@@ -42,6 +42,7 @@
   .chip { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 12px; font-weight: 700; background: var(--violeta-suave); color: var(--violeta-osc); white-space: nowrap; }
   .chip.ok { background: #DCFCE7; color: #166534; } .chip.mal { background: #FEE2E2; color: #991B1B; } .chip.aviso { background: #FEF3C7; color: #92400E; }
   .barra-h { display: grid; grid-template-columns: 120px 1fr 36px; gap: 8px; align-items: center; font-size: 13.5px; margin: 6px 0; }
+  .barra-h > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .barra-h div { height: 10px; background: var(--violeta-suave); border-radius: 6px; overflow: hidden; }
   .barra-h div span { display: block; height: 100%; background: var(--grad); }
   .vacio2 { color: var(--texto-suave); font-size: 14px; padding: 8px 0; }
@@ -108,6 +109,11 @@
 
   function pintar(d) {
     var t = d.totales;
+    var v = d.visitas;
+    function barras(lista, campo) {
+      var mx = Math.max(1, Math.max.apply(null, (lista || []).map(function (x) { return x.visitas; }).concat([1])));
+      return (lista || []).length ? lista.map(function (x) { return '<div class="barra-h"><span title="' + esc(x[campo]) + '">' + esc(x[campo]) + '</span><div><span style="width:' + Math.round(x.visitas / mx * 100) + '%"></span></div><b>' + num(x.visitas) + '</b></div>'; }).join('') : '<div class="vacio2">Sin visitas todavía.</div>';
+    }
     var estados = d.reservas_por_estado || {};
     var maxTop = Math.max(1, Math.max.apply(null, (d.top_servicios || []).map(function (x) { return x.reservas; }).concat([1])));
     vista.innerHTML =
@@ -116,6 +122,7 @@
       '<button class="prim" id="refrescar" type="button">Actualizar</button><button id="salir" type="button">Salir</button></div></div>' +
 
       '<div class="kpis">' +
+      (v ? '<div class="kpi destaca"><small>Visitas a la web</small><b>' + num(v.periodo) + '</b><span>' + num(v.hoy) + ' hoy · ' + num(v.semana) + ' en 7 días · ' + (v.movil_pct != null ? v.movil_pct + ' % móvil' : '') + '</span></div>' : '') +
       '<div class="kpi destaca"><small>Usuarios registrados</small><b>' + num(t.usuarios) + '</b><span>+' + num(t.registros_hoy) + ' hoy · +' + num(t.registros_7d) + ' en 7 días</span></div>' +
       '<div class="kpi"><small>Clientes</small><b>' + num(t.clientes) + '</b><span>cuentas de cliente</span></div>' +
       '<div class="kpi"><small>Profesionales</small><b>' + num(t.profesionales) + '</b><span>' + num(t.pros_verificadas) + ' verificadas · ' + num(t.pros_disponibles) + ' disponibles</span></div>' +
@@ -133,6 +140,9 @@
       '<h2 style="margin-top:18px">Lo más reservado</h2>' +
       ((d.top_servicios || []).length ? d.top_servicios.map(function (x) { return '<div class="barra-h"><span>' + esc(x.categoria) + '</span><div><span style="width:' + Math.round(x.reservas / maxTop * 100) + '%"></span></div><b>' + num(x.reservas) + '</b></div>'; }).join('') : '<div class="vacio2">Sin datos todavía.</div>') +
       '</div></div>' +
+
+      (v ? '<div class="rejilla"><div class="caja"><h2>Páginas más vistas</h2><p class="sub2">Últimos ' + d.dias + ' días</p>' + barras(v.paginas, 'pagina') + '</div>' +
+      '<div class="caja"><h2>De dónde llegan</h2><p class="sub2">Google, Instagram, WhatsApp…</p>' + barras(v.origenes, 'origen') + '</div></div>' : '') +
 
       '<div class="rejilla"><div class="caja"><h2>Últimas reservas</h2><div class="tabla-scroll"><table class="lista"><thead><tr><th>Creada</th><th>Servicio</th><th>Cliente</th><th>Profesional</th><th>Cita</th><th>Total</th><th>Estado</th></tr></thead><tbody>' +
       ((d.ultimas_reservas || []).map(function (r) { return '<tr><td>' + fecha(r.creada_en) + '</td><td>' + esc(r.servicio) + '</td><td>' + esc(r.cliente) + '</td><td>' + esc(r.profesional) + '</td><td>' + fecha(r.empieza) + '</td><td>' + euros(r.total_cent) + ' <span class="meta">' + esc(r.metodo_pago || '') + '</span></td><td>' + chipEstado(r.estado) + '</td></tr>'; }).join('') || '<tr><td colspan="7" class="vacio2">Aún no hay reservas.</td></tr>') +
@@ -158,6 +168,8 @@
     var s = await sb.auth.getSession();
     if (!s.data.session) return pintarLogin();
     var r = await sb.rpc('panel_dueno', { p_dias: dias });
+    var rv = await sb.rpc('panel_visitas', { p_dias: dias });
+    if (!r.error) r.data.visitas = rv.error ? null : rv.data;
     if (r.error) {
       if (/dueño/.test(r.error.message)) return pintarLogin('Esta cuenta no tiene acceso al panel. Entra con la cuenta del dueño.');
       vista.innerHTML = '<div class="caja">No se pudo cargar el panel: ' + esc(r.error.message) + '</div>'; return;
