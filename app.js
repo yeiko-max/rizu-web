@@ -8,7 +8,7 @@
   var SUPABASE_KEY = 'sb_publishable_O9HxRqA9a-VTyEogOj6cgg__E0dhlQO';
   var STRIPE_PK = ''; // Fase piloto: sin tarjeta. Clave del sandbox: 'pk_test_51UbPmUHr7XUHZJnVV67OQVzsomsRdNOvKl3PTAjUldrOdt28Y60xSxOJNapoIeKk4q7I4U05cCs9U2BAyxpjd6YI00qgOgLagp'.
   var PILOTO = true; // fase de lanzamiento: pago directo a la profesional, sin comisiones ni membresías // clave publicable de Stripe (pk_test_... o pk_live_...). Vacía = solo efectivo.
-  var URL_APP = 'https://yeiko-max.github.io/rizu-web/app.html';
+  var URL_APP = 'https://rizuapp.com/app.html';
   var DIAS = 7, PASO_MIN = 30, DESPLAZAMIENTO = 200;
   var REGLAS_BASE = { club: false, cancel_horas: 24, dias_retoque: 7 };
 

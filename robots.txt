@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yeiko-max.github.io/rizu-web/sitemap.xml
+Sitemap: https://rizuapp.com/sitemap.xml
